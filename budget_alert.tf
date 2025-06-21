@@ -1,5 +1,5 @@
 resource "aws_sns_topic" "budget_alert" {
-  provider = aws.virginia
+  provider = aws.virginia  # ← us-east-1 に明示
   name     = "budget-alert-topic"
 }
 
@@ -17,7 +17,6 @@ locals {
     { name = "budget-10", amount = 10 }
   ]
 }
-
 
 resource "aws_budgets_budget" "budget" {
   provider         = aws.virginia

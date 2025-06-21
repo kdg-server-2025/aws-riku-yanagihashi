@@ -1,10 +1,8 @@
 resource "aws_sns_topic" "budget_alert" {
-  provider = aws.virginia  # ← us-east-1 に明示
-  name     = "budget-alert-topic"
+  name = "budget-alert-topic"
 }
 
 resource "aws_sns_topic_subscription" "email" {
-  provider  = aws.virginia
   topic_arn = aws_sns_topic.budget_alert.arn
   protocol  = "email"
   endpoint  = "riku.yanagihashi0420@gmail.com"
@@ -19,13 +17,12 @@ locals {
 }
 
 resource "aws_budgets_budget" "budget" {
-  provider         = aws.virginia
-  for_each         = { for b in local.budget_levels : b.name => b }
-  name             = each.value.name
-  budget_type      = "COST"
-  time_unit        = "MONTHLY"
-  limit_amount     = each.value.amount
-  limit_unit       = "USD"
+  for_each     = { for b in local.budget_levels : b.name => b }
+  name         = each.value.name
+  budget_type  = "COST"
+  time_unit    = "MONTHLY"
+  limit_amount = each.value.amount
+  limit_unit   = "USD"
 
   notification {
     comparison_operator       = "GREATER_THAN"

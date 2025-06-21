@@ -1,5 +1,5 @@
 .terraform/*
 .pem
-
+AmazonLinuxKeyPare.pem
 terraform.tfvars
 

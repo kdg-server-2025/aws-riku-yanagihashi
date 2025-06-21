@@ -45,8 +45,8 @@ chown ubuntu:ubuntu /home/ubuntu/.ssh/
 wget "https://github.com/$GITHUB_USERNAME.keys" -O /home/ubuntu/.ssh/authorized_keys
 
 # パーミッション設定
-chmod 600 /home/ubuntu/.ssh/authorized_keys
-chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys
+; chmod 600 /home/ubuntu/.ssh/authorized_keys
+; chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys
 EOF
   )
 }

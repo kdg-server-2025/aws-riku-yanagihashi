@@ -1,2 +1,6 @@
 .terraform/*
+.pem
+AmazonLinuxKeyPare.pem
+terraform.tfvars
+.DS_Store
 

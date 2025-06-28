@@ -15,3 +15,6 @@ terraform {
     encrypt = true
   }
 }
+provider "aws" {
+  region = "ap-northeast-1"
+}

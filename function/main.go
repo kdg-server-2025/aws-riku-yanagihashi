@@ -37,9 +37,9 @@ func callLambda() (string, error) {
 type ResponseBody struct {
 	Message         string            `json:"message"`
 	CurrentTime     string            `json:"currentTime"`
-	LambdaUsage     interface{}       `json:"lambdaUsage"`
+	LambdaUsage     any               `json:"lambdaUsage"`
 	EnvironmentVars map[string]string `json:"environmentVars"`
-	LambdaContext   interface{}       `json:"lambdaContext"`
+	LambdaContext   any               `json:"lambdaContext"`
 }
 
 // HTTPリクエストを処理するハンドラ関数

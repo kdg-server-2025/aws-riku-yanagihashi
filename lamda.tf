@@ -1,3 +1,4 @@
+/*
 resource "aws_s3_bucket" "lambda_artifacts" {
   bucket = "kdg-aws-2025-riku-yanagihashi-lambda-artifacts"
   tags = {
@@ -75,3 +76,4 @@ resource "aws_lambda_function_url" "first_function" {
   function_name      = aws_lambda_function.first_function.function_name
   authorization_type = "NONE"
 }
+*/

@@ -36,7 +36,7 @@ data "aws_ami" "ubuntu" {
 # }
 
 resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh_v2"
+  name        = "allow_ssh_v3"
   description = "Allow SSH access"
   vpc_id      = data.aws_vpc.default.id
 
